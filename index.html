@@ -13,7 +13,7 @@
           if(Hls.isSupported()) {
             var video = document.getElementById('video');
             var hls = new Hls();
-            hls.loadSource('http://wowza-test.streamroot.io/liveOrigin/sintel-live.smil/playlist.m3u8');
+            hls.loadSource('playlist.m3u8');
             hls.attachMedia(video);
             hls.on(Hls.Events.MANIFEST_PARSED,function() {
               video.play();
@@ -21,7 +21,7 @@
           }
 
           else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-             video.src = 'http://wowza-test.streamroot.io/liveOrigin/sintel-live.smil/playlist.m3u8';
+             video.src = 'playlist.m3u8';
              video.addEventListener('canplay',function() {video.play();});
           }
     </script> 
